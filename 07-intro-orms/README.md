@@ -129,23 +129,23 @@ Q: Write the SQL to find all the tweets tagged '#tbt'
 What are the four ways we can interact with data?
 
 * Create  
-SQL: INSERT INTO books (title, page_count) VALUES ("Harry Potter", 399);  
-Ruby: Book.new("Harry Potter", 399)
+SQL: `INSERT INTO books (title, page_count) VALUES ("Harry Potter", 399)`    
+Ruby: `Book.new("Harry Potter", 399)`
 
 
 * Read  
-SQL: SELECT * FROM books;  
-Ruby: Book.all
+SQL: `SELECT * FROM books;`   
+Ruby: `Book.all`
 
 
 * Update  
-SQL: UPDATE books SET page_count = 300 WHERE title = "Harry Potter";  
-Ruby: harry_potter.page_count = 300
+SQL: `UPDATE books SET page_count = 300 WHERE title = "Harry Potter";`   
+Ruby: `harry_potter.page_count = 300`
 
 
 * Destroy  
-SQL: DELETE FROM books WHERE title = "Harry Potter";  
-Ruby: harry_potter.delete
+SQL: `DELETE FROM books WHERE title = "Harry Potter";`   
+Ruby: `harry_potter.delete`
 
 
 
