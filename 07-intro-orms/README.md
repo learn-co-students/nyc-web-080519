@@ -87,6 +87,12 @@ id | author_id | book_id
 1  | 1         | 1
 2  | 5         | 5
 3  | 6         | 5
+4  | 2         | 3
+5  | 3         | 4
+6  | 1         | 2
+
+
+
 
 
 Q: Write the SQL to find all books written by a certain author given their name
@@ -140,5 +146,12 @@ Ruby: harry_potter.delete
 ## Lecture Notes
 
 ### What does an ORM do?
+* provides a Ruby interface to our database 
+* it connects our Ruby models/attributes/instances to tables/columns/rows in the database
+* it translates data from database into Ruby objects
 
 ### How does it help us?
+* scripting with Ruby
+* more concise to call "Tweet.all" than to write out entire SQL query
+* puts everything in a single language
+* why else??
