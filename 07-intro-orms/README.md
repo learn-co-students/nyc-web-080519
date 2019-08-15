@@ -13,11 +13,11 @@
 
 ## Object Relational Mapper (ORM)
 
-+ Pattern:
- - convert ruby objects into database things
- - ruby classes are represented in the DB as a table
- - ruby instances are represented as rows in the table
- - attributes of ruby objects are represented as table columns
+* Pattern:
+    - convert ruby objects into database things
+    - ruby classes are represented in the DB as a table
+    - ruby instances are represented as rows in the table
+    - attributes of ruby objects are represented as table columns
 
 
 + Definition:
@@ -30,15 +30,19 @@ Draw out what your schema (structure of your tables and columns) would be for th
 
 1. Books and Authors where each book has a single author. Books should have a title and authors should have a name
 
-books
-id | title                | page_count | author_id
-1  | The Wheel of Time    | 1000       | 1
-2  | The Knife Something  | 1000       | 1
-3  | Ender's Game         | 263        | 2
-4  | The Name of the Wind | 500        | 3
+### Books
+| id  | title                | page_count | author_id |
+| --- | ------------------- | ---------- | --------- |
+| 1   | The Wheel of Time    | 1000       | 1         |
+| 2   | The Knife Something  | 1000       | 1         |
+| 3   | Ender's Game         | 263        | 2         |
+| 4   | The Name of the Wind | 500        | 3         |
 
-authors
-id | name              
+
+
+### Authors
+id | name  
+--- | ---            
 1  | Robert Jordan     
 2  | Orseon Scott Card 
 3  | Patrick Rothfuss
@@ -65,8 +69,9 @@ WHERE authors.name = "Orseon Scott Card";
 
 2. Books and Authors where each book can have one or multiple authors. Books should have a title and authors should have a name
 
-authors
-id | name              
+### Authors
+id | name   
+--- | ---           
 1  | Robert Jordan     
 2  | Orseon Scott Card 
 3  | Patrick Rothfuss
@@ -74,24 +79,25 @@ id | name
 5  | Terry Pratchet
 6  | Neil Gaiman
 
-books
+### Books
 id | title                | page_count 
+--- | --- | ---
 1  | The Wheel of Time    | 1000       
 2  | The Knife Something  | 1000       
 3  | Ender's Game         | 263        
 4  | The Name of the Wind | 500        
 5  | Good Omens           | 300        
 
-book_authors
+
+### Book_authors
 id | author_id | book_id
+--- | --- | ---
 1  | 1         | 1
 2  | 5         | 5
 3  | 6         | 5
 4  | 2         | 3
 5  | 3         | 4
 6  | 1         | 2
-
-
 
 
 
@@ -117,28 +123,28 @@ Q: Write the SQL to find all the tweets tagged '#tbt'
 
 4. After completing the questions above, is there a rule you can determine about which table the foreign key belongs on given two associated tables?
 
- - child table => we want the foreign key to be on the belongs_to table (e.g., the books table)
+    - child table => we want the foreign key to be on the belongs_to table (e.g., the books table)
 
 # CRUD REVIEW
 What are the four ways we can interact with data?
 
-* Create
-SQL: INSERT INTO books (title, page_count) VALUES ("Harry Potter", 399);
+* Create  
+SQL: INSERT INTO books (title, page_count) VALUES ("Harry Potter", 399);  
 Ruby: Book.new("Harry Potter", 399)
 
 
-* Read
-SQL: SELECT * FROM books;
+* Read  
+SQL: SELECT * FROM books;  
 Ruby: Book.all
 
 
-* Update
-SQL: UPDATE books SET page_count = 300 WHERE title = "Harry Potter";
+* Update  
+SQL: UPDATE books SET page_count = 300 WHERE title = "Harry Potter";  
 Ruby: harry_potter.page_count = 300
 
 
-* Destroy
-SQL: DELETE FROM books WHERE title = "Harry Potter";
+* Destroy  
+SQL: DELETE FROM books WHERE title = "Harry Potter";  
 Ruby: harry_potter.delete
 
 
