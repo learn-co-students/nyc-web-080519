@@ -15,3 +15,39 @@
 - The **\_** and **\_** keys in the request headers are what tells our applicaiton which method to invoke
 
 - When a method is invoked after an HTTP request it must respond with **\_** that details the markup for the webpage that the user sees.
+
+### What is the Internet and how does it work?
+
+- Cables
+- Servers
+  - IP Addresses
+- Clients
+
+### Request/Response Cycle
+
+- Request
+  - HTTP Methods and Resource
+  - CRUD
+- Response
+  - Header
+    - Status codes
+  - Body
+    - HTML
+
+## CRUD Actions
+
+    - Create -- POST
+    - Read -- GET
+    - Update -- PUT/PATCH
+    - Delete/Destroy -- DELETE
+
+## HTTP Verbs
+
+    - GET
+    - POST
+    - PATCH/PUT
+    - DELETE
+
+### Rack
+
+- Static Web App vs. Dynamic Web App
