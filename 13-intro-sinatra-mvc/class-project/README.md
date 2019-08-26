@@ -19,3 +19,11 @@
 - What does MVC stand for?
 
 - What is MVC?
+
+- What type of file allows us to write HTML with ruby embedded?
+
+- Which part of MVC is responsible to handling our routes?
+
+- Which part of MVC do we create our responses?
+
+- Which part of MVC sends the response to the user?
