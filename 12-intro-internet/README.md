@@ -10,6 +10,8 @@
 
 - **\_**s are methods that communicate to the server which CRUD action we want to execute
 
+- When we enter a URL enter our web browser it sends a **\_** request to the server
+
 - The **\_** and **\_** keys in the request headers are what tells our applicaiton which method to invoke
 
 - When a method is invoked after an HTTP request it must respond with **\_** that details the markup for the webpage that the user sees.
