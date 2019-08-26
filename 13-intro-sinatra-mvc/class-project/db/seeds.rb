@@ -1,0 +1,5 @@
+Clown.create(name:"PennyWise")
+Clown.create(name:"Krusty")
+Clown.create(name:"Joker")
+Clown.create(name:"Albert")
+Clown.create(name:"Ronald")
