@@ -1,0 +1,7 @@
+<ul>
+<%@carnivals.each do |carnival|%>
+    <li>
+        <a href=<%="/carnivals/#{carnival.id}"%>><%=carnival.name%></a>
+    </li>
+<%end%>
+</ul>

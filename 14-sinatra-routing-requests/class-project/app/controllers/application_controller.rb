@@ -15,16 +15,5 @@ class ApplicationController < Sinatra::Base
     erb :helloWorld
   end
 
-  # index action
-  get "/clowns" do 
-    @clowns = Clown.all
-    erb :index 
-  end
-
-  #show action
-  get "/clowns/:id" do
-    @clown = Clown.find(params[:id])
-    erb :show
-  end
-
+  
 end

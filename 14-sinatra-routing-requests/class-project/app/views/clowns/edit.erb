@@ -1,0 +1,9 @@
+<h1>Edit Clown</h1>
+
+<form action="/clowns/:id" method="POST">
+    <input type="hidden" name="_method" value="PATCH">
+    <input type="text" value=<%=@clown.name%> name="clown[name]"/>
+    <input type="submit" value="edit clown">
+
+
+</form>
