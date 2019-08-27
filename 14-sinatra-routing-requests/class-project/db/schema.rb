@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190826182158) do
+ActiveRecord::Schema.define(version: 20190827133915) do
+
+  create_table "carnivals", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+  end
 
   create_table "clowns", force: :cascade do |t|
     t.string "name"
