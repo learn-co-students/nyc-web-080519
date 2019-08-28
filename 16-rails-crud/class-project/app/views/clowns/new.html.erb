@@ -1,0 +1,20 @@
+<h1>Clowns#new</h1>
+<p>Find me in app/views/clowns/new.html.erb</p>
+<!-- 
+<form action="/clowns" method="POST">
+    <input type="text" placeholder="enter name" name="name" />
+    <input type="submit" value="submit" />
+</form>
+
+<%=form_tag '/clowns' do%>
+<%=text_field_tag :"clown[name]"%>
+<%=number_field_tag :"clown[age]"%>
+<%= submit_tag "submit"%>
+<%end%> -->
+
+<%=form_for @clown do |f|%>
+<%=f.text_field :name%>
+<%=f.number_field :age%>
+<%=f.collection_select :carnival_id, @carnivals, :id, :name%>
+<%=f.submit :submit%>
+<%end%>

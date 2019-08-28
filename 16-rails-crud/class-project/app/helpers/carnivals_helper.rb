@@ -1,0 +1,2 @@
+module CarnivalsHelper
+end

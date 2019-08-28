@@ -1,0 +1,8 @@
+<h1>Clowns#edit</h1>
+<p>Find me in app/views/clowns/edit.html.erb</p>
+
+<%=form_for @clown do |f|%>
+<%=f.text_field :name%>
+<%=f.number_field :age%>
+<%=f.submit :submit%>
+<%end%>

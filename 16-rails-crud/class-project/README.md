@@ -2,10 +2,7 @@
 
 ## Questions
 
-- routes in Sinatra vs Rails
-  - RESTful routing
-- Rails process
-- MVC
+- rails redirects
 
 ## Rails Generators
 

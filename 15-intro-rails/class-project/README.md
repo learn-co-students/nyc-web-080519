@@ -1,24 +1,36 @@
-# README
+# Intro to Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Questions
 
-Things you may want to cover:
+- routes in Sinatra vs Rails
+  - RESTful routing
+- Rails process
+- MVC
 
-* Ruby version
+## Rails Generators
 
-* System dependencies
+- rails g scaffold
+- rails g model/controller (args)
+- rails g migration (args)
 
-* Configuration
+## Rails Routing
 
-* Database creation
+- moved into routes file
 
-* Database initialization
+## Rails Controllers
 
-* How to run the test suite
+- only responsible for actions(methods)
 
-* Services (job queues, cache servers, search engines, etc.)
+## Process
 
-* Deployment instructions
+- Models ✅
+- Routes
+- Controllers
+- Views
 
-* ...
+## Activity
+
+- Create the Carnival model/controller/views/routes
+- Then refactor our app to have a relationship
+  - Clown has_many Carnivals
+  - Carnival has_many Clowns
