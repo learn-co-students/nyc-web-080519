@@ -1,0 +1,11 @@
+Clown.create!(name:"PennyWise")
+Clown.create!(name:"Krusty")
+Clown.create!(name:"Joker")
+Clown.create!(name:"Albert")
+Clown.create!(name:"Ronald")
+
+Carnival.create!(name: "Barnum & Bailey", city: "New York")
+Carnival.create!(name: "Ringling Brothers", city: "Atlanta")
+Carnival.create!(name: "Cirque du Soleil", city: "Las Vegas")
+Carnival.create!(name: "Circus Circus", city: "Las Vegas")
+Carnival.create!(name: "Carnival Carnival", city: "Los Angeles")
