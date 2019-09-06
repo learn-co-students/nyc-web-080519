@@ -1,0 +1,18 @@
+<h1>Shows#new</h1>
+<p>Find me in app/views/shows/new.html.erb</p>
+
+<%if flash[:message]%>
+<h2>
+
+    <%=flash[:message]%>
+</h2>
+<%end%>
+
+
+
+<%= form_for @show do |f| %>
+<%= f.collection_select :day, @days, :to_s, :to_s, prompt: "choose day" %>
+<%=f.collection_select :carnival_id, @carnivals, :id, :name, prompt: "choose carnival" %>
+<%=f.collection_select :clown_id, @clowns, :id, :name, prompt: "choose clown" %>
+<%=f.submit "submit"%>
+<% end %>
