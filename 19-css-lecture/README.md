@@ -207,7 +207,9 @@ For Semantic with Rails, consider:
   Some options:
 
   -[Integrating Custom Bootstrap theme into Rails](https://medium.com/@chan0123/integrate-custom-bootstrap-theme-in-rails-9e78070e6ba)
+  
   -[How to use Bootstrap Themes on Ruby on Rails in 5 Minutes](https://medium.com/@yli0607x/how-to-use-bootstrap-themes-on-ruby-on-rails-in-5-minutes-8e6f9542f6d8)
+  
   -[Integrating Bootstrap into Rails 5 (...and how to use a Bootstrap Theme)](https://hackernoon.com/using-bootstrap-in-rails-5-969cbe423926)
 
 ## Resources
