@@ -1,0 +1,54 @@
+body {
+  font-weight: bold;
+}
+
+.starfish {
+  color: orange;
+}
+
+#blue-text {
+  color: blue;
+}
+
+#catfish {
+  color: green;
+}
+
+h3, h4 {
+  color: yellow;
+}
+
+#big-font purple-font{
+  font-size: 40px;
+}
+
+# {
+  color: purple;
+}
+
+/* .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 10px;
+} */
+
+/* .grid {
+  width: 97%;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  grid-gap: 10px;
+} */
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.inner-item {
+  background-color: green;
+  border-style: double;
+  border-color: black;
+  width: 40px;
+}
