@@ -1,0 +1,45 @@
+.image-wrapper {
+  width: 100%;
+}
+
+.image-wrapper > img {
+  width: 80%;
+}
+
+.button {
+  color: white;
+  font-size: 20px;
+}
+
+.like {
+  background-color: green;
+}
+
+.love {
+  background-color: rgba(30, 130, 76, 1);
+}
+
+.gotta {
+  background-color: rgba(123, 239, 178, 1)
+}
+
+.close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tile {
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
