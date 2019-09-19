@@ -1,0 +1,46 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "name": "Settlers of Catan",
+      "description": "Friendships will be tested.",
+      "img_url": "https://crowscastle.com/375-large_default/the-settlers-of-catan.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Azul",
+      "description": "Great fun with the friends!.",
+      "img_url": "https://cf.geekdo-images.com/itemrep/img/ql-0-t271LVGqbmWA1gdkIH7WvM=/fit-in/246x300/pic3718275.jpg"
+    },
+    {
+      "name": "Talisman",
+      "description": "It's really metal",
+      "img_url": "https://www.games-workshop.com/resources/img/cmp/talisman/Talisman_Box_Front.jpg",
+      "id": 4
+    },
+    {
+      "name": "Talisman",
+      "description": "It's really metal",
+      "img_url": "https://www.games-workshop.com/resources/img/cmp/talisman/Talisman_Box_Front.jpg",
+      "id": 5
+    },
+    {
+      "name": "Talisman",
+      "description": "It's really metal",
+      "img_url": "https://www.games-workshop.com/resources/img/cmp/talisman/Talisman_Box_Front.jpg",
+      "id": 6
+    },
+    {
+      "name": "Talisman",
+      "description": "So metal",
+      "img_url": "https://www.games-workshop.com/resources/img/cmp/talisman/Talisman_Box_Front.jpg",
+      "id": 7
+    },
+    {
+      "name": "Small World",
+      "description": "So not metal",
+      "img_url": "https://i5.walmartimages.com/asr/c449c6ec-cae1-4b3c-8010-f74390d56abd_1.9d0a7645e3cd8d776b8a1396f03b524b.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+      "id": 8
+    }
+  ]
+}
