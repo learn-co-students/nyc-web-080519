@@ -1,7 +1,7 @@
 # React
 
 - JSX
-    - syntactical sugar that allows us to write "html" in Javascript 
+    - syntactical sugar that allows us to write "html" in Javascript
 - Virtual DOM (not specific to React)
     - Allows Declaritive programming
     - Run more efficiently
