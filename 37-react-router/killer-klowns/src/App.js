@@ -7,45 +7,10 @@ import Welcome from './components/Welcome'
 import FoOhFo from './components/FoOhFo'
 
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     klowns: [],
-  //     humans: []
-  //   }
-  // }
 
   state = {
-    klowns: [],
-    humans: [],
     klownScore: 0,
     humanScore: 0,
-    searchTerm: ""
-  }
-
-
-  componentDidMount() {
-    this.fetchHumans()
-    this.fetchKlowns()
-
-  }
-
-  //GET Requests
-  fetchKlowns = () => {
-
-    fetch("http://localhost:4001/klowns")
-      .then(resp => resp.json())
-      .then(data => this.setState({
-        klowns: data
-      }))
-  }
-  fetchHumans = () => {
-
-    fetch("http://localhost:4001/humans")
-      .then(resp => resp.json())
-      .then(data => this.setState({
-        humans: data
-      }))
   }
 
   //functions responsible for changing Klown score
@@ -56,7 +21,6 @@ class App extends React.Component {
   }
 
   decreaseKlownScore = () => {
-    console.log("decrease")
     this.setState({
       klownScore: this.state.klownScore - 1
     })
@@ -70,20 +34,11 @@ class App extends React.Component {
     })
   }
   decreaseHumanScore = () => {
-    console.log("decrease")
     this.setState({
       humanScore: this.state.humanScore - 1
     })
   }
-  attackHuman = (name) => {
-    let newArray = [...this.state.humans]
-    // console.log("why isn't this working? name:  ", name)
-    let person = newArray.find(human => human.name === name)
-    person.health = person.health - 5
-    this.setState({
-      humans: newArray
-    })
-  }
+
 
   //Form Submit Functions
   klownSubmitHandler = (klown) => {
@@ -126,31 +81,17 @@ class App extends React.Component {
       searchTerm
     })
   }
-  filterKlowns = () => {
-    return this.state.klowns.filter(klownObj => klownObj.name.toUpperCase().includes(this.state.searchTerm.toUpperCase()))
 
-  }
 
 
   render() {
     return (
-      <div className="App">
-        {this.state.klowns.length > 0 ? (<div>
-          <Switch>
-            <Route path="/welcome" component={Welcome} />
-            <Route path="/humans" render={() => <HumanContainer humans={this.state.humans} attackClickHandler={this.decreaseKlownScore} score={this.state.humanScore} increaseHumanScore={this.increaseHumanScore} klowns={[this.state.klowns[0].name, this.state.klowns[1].name]} attackKlown={this.attackHuman} />} />
-            <Route path="/klowns" render={() => <KlownContainer searchChangeHandler={this.searchChangeHandler} searchTerm={this.state.searchTerm} submitHandler={this.klownSubmitHandler} klowns={this.filterKlowns()} increaseKlownScore={this.increaseKlownScore} score={this.state.klownScore} attackClickHandler={this.decreaseHumanScore} humans={[this.state.humans[0].name, this.state.humans[1].name]} attackHuman={this.attackHuman} />} />
-            <Route path="/" render={(props) => {
-              console.log("router props: ", props)
-
-
-              return <FoOhFo />
-            }} />
-          </Switch>
-
-        </div>) : (<h1>Loading</h1>)}
-
-      </div>
+      <Switch>
+        <Route path="/welcome" component={Welcome} />
+        <Route path="/humans" render={() => <HumanContainer humans={this.state.humans} attackClickHandler={this.decreaseKlownScore} score={this.state.humanScore} increaseHumanScore={this.increaseHumanScore} attackKlown={this.attackHuman} />} />
+        <Route path="/klowns" render={() => <KlownContainer searchChangeHandler={this.searchChangeHandler} searchTerm={this.state.searchTerm} submitHandler={this.klownSubmitHandler} increaseKlownScore={this.increaseKlownScore} score={this.state.klownScore} attackClickHandler={this.decreaseHumanScore} attackHuman={this.attackHuman} />} />
+        <Route path="/" component={FoOhFo} />
+      </Switch>
     );
   }
 

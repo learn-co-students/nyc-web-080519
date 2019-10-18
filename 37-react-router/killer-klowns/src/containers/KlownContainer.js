@@ -6,40 +6,63 @@ import KlownSearch from '../components/KlownSearch'
 
 
 
-const KlownContainer = (props) => {
-    // console.log("klown container human names: ", props.humans)
+class KlownContainer extends React.Component {
+    state = {
+        klowns: [],
+        searchTerm: ""
 
-    let klownsArray = props.klowns.map(klownObj => <Character key={klownObj.id} character={klownObj} clickHandler={props.increaseKlownScore} attackClickHandler={props.attackClickHandler} names={props.humans} attackCharacter={props.attackHuman} />)
+    }
+    componentDidMount() {
+        this.fetchKlowns()
+    }
 
-    return (
-        <div className="klown-container">
+    fetchKlowns = () => {
+        fetch("http://localhost:4001/klowns")
+            .then(resp => resp.json())
+            .then(data => this.setState({
+                klowns: data
+            }))
+    }
 
-            <Switch>
+    filterKlowns = () => {
+        return this.state.klowns.filter(klownObj => klownObj.name.toUpperCase().includes(this.state.searchTerm.toUpperCase()))
 
-                <Route path="/klowns/:id" render={({ match }) => {
-                    let klownId = parseInt(match.params.id)
-                    let klownObj = props.klowns.find(klown => klown.id === klownId)
-                    console.log("klownObj:", klownObj);
-                    return <Character character={klownObj} clickHandler={props.increaseKlownScore} attackClickHandler={props.attackClickHandler} names={props.humans} attackCharacter={props.attackHuman} />
-                }} />
-                <Route path="/klowns" render={() => {
-                    return (
-                        <>
-                            <h1>Klown Container</h1>
-                            <NewKlown submitHandler={props.submitHandler} />
+    }
 
-                            Score: {props.score}
-                            <KlownSearch searchChangeHandler={props.searchChangeHandler} searchTerm={props.searchTerm} />
-                            {klownsArray}
-                        </>
-                    )
-                }} />
+    render() {
+        let klownsArray = this.filterKlowns().map(klownObj => <Character key={klownObj.id} character={klownObj} clickHandler={this.props.increaseKlownScore} attackClickHandler={this.props.attackClickHandler} names={this.props.humans} attackCharacter={this.props.attackHuman} />)
 
-            </Switch>
+        return (
+            <div className="klown-container">
+                {this.state.klowns.length > 0 ? (<Switch>
 
-        </div>
+                    <Route path="/klowns/:id" render={({ match }) => {
+                        let klownId = parseInt(match.params.id)
+                        let klownObj = this.state.klowns.find(klown => klown.id === klownId)
+                        console.log("klownObj:", klownObj);
+                        return <Character character={klownObj} clickHandler={this.props.increaseKlownScore} attackClickHandler={this.props.attackClickHandler} names={this.props.humans} attackCharacter={this.props.attackHuman} />
+                    }} />
+                    <Route path="/klowns" render={() => {
+                        return (
+                            <>
+                                <h1>Klown Container</h1>
+                                <NewKlown submitHandler={this.props.submitHandler} />
 
-    )
+                                Score: {this.props.score}
+                                <KlownSearch searchChangeHandler={this.props.searchChangeHandler} searchTerm={this.props.searchTerm} />
+                                {klownsArray}
+                            </>
+                        )
+                    }} />
+
+                </Switch>
+                ) : (<h1>Loading</h1>)}
+
+            </div>
+
+        )
+    }
+
 
 }
 

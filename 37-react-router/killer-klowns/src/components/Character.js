@@ -21,10 +21,10 @@ const Character = (props) => {
             Health: {props.character.health}
             <br />
             <button onClick={props.clickHandler}>Like</button>
-            <button onClick={props.attackClickHandler}>Attack Everyone</button>
+            {/* <button onClick={props.attackClickHandler}>Attack Everyone</button> */}
             <br />
-            <button onClick={() => props.attackCharacter(props.names[0])}>Attack {props.names[0]}</button>
-            <button onClick={() => props.attackCharacter(props.names[1])}>Attack {props.names[1]}</button>
+            {/* <button onClick={() => props.attackCharacter(props.names[0])}>Attack {props.names[0]}</button>
+            <button onClick={() => props.attackCharacter(props.names[1])}>Attack {props.names[1]}</button> */}
 
         </div>
     )
