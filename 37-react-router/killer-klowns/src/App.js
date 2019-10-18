@@ -1,7 +1,10 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom'
 import './App.css';
 import KlownContainer from './containers/KlownContainer'
 import HumanContainer from './containers/HumanContainer'
+import Welcome from './components/Welcome'
+import FoOhFo from './components/FoOhFo'
 
 class App extends React.Component {
   // constructor(props) {
@@ -133,9 +136,17 @@ class App extends React.Component {
     return (
       <div className="App">
         {this.state.klowns.length > 0 ? (<div>
-          <KlownContainer searchChangeHandler={this.searchChangeHandler} searchTerm={this.state.searchTerm} submitHandler={this.klownSubmitHandler} klowns={this.filterKlowns()} increaseKlownScore={this.increaseKlownScore} score={this.state.klownScore} attackClickHandler={this.decreaseHumanScore} humans={[this.state.humans[0].name, this.state.humans[1].name]} attackHuman={this.attackHuman} />
-          <HumanContainer humans={this.state.humans} attackClickHandler={this.decreaseKlownScore} score={this.state.humanScore} increaseHumanScore={this.increaseHumanScore} klowns={[this.state.klowns[0].name, this.state.klowns[1].name]} attackKlown={this.attackHuman} />
+          <Switch>
+            <Route path="/welcome" component={Welcome} />
+            <Route path="/humans" render={() => <HumanContainer humans={this.state.humans} attackClickHandler={this.decreaseKlownScore} score={this.state.humanScore} increaseHumanScore={this.increaseHumanScore} klowns={[this.state.klowns[0].name, this.state.klowns[1].name]} attackKlown={this.attackHuman} />} />
+            <Route path="/klowns" render={() => <KlownContainer searchChangeHandler={this.searchChangeHandler} searchTerm={this.state.searchTerm} submitHandler={this.klownSubmitHandler} klowns={this.filterKlowns()} increaseKlownScore={this.increaseKlownScore} score={this.state.klownScore} attackClickHandler={this.decreaseHumanScore} humans={[this.state.humans[0].name, this.state.humans[1].name]} attackHuman={this.attackHuman} />} />
+            <Route path="/" render={(props) => {
+              console.log("router props: ", props)
 
+
+              return <FoOhFo />
+            }} />
+          </Switch>
 
         </div>) : (<h1>Loading</h1>)}
 
