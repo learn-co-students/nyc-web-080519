@@ -7,17 +7,13 @@ import App from './App';
 
 let defaultState = {
     klown: 0,
-    human: 0
+    human: 0,
 }
 
 let reducer = (state, action) => {
     console.log(action)
     console.log("state", state)
     switch (action.type) {
-        case "beef":
-            return { ...state, key: "steak" }
-        case "killer":
-            return { ...state, key: "klowns" }
         case "INCREASE KLOWN":
             return { ...state, klown: state.klown + 1 }
         case "INCREASE HUMAN":
