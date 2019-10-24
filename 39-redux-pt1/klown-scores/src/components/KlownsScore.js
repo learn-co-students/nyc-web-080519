@@ -1,7 +1,13 @@
 import React from 'react'
 
 const KlownsScore = () => {
-    return <h1>Klowns Score</h1>
+    return (
+        <div>
+            <h3>Klowns Score</h3>
+            <br />
+            Klowns Score:
+        </div>
+    )
 }
 
 export default KlownsScore
