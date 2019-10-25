@@ -23,12 +23,7 @@ let reducer = (state, action) => {
     }
 
 }
-
 let reduxStore = createStore(reducer, defaultState)
-
-
-
-
 ReactDOM.render(
     <Provider store={reduxStore}>
         <App />
